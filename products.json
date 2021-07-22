@@ -1,0 +1,46 @@
+[{
+    "_id": {
+        "$oid": "60f95325b977890ae4086a7b"
+    },
+    "name" : "product 1",
+    "image" : "pizza.png",
+    "description" : "delicious pizza",
+    "price" : 100
+},
+{
+    "_id": {
+        "$oid": "60f95325b977890ae4086a8b"
+    },
+    "name" : "product 2",
+    "image" : "pizza.png",
+    "description" : "delicious pizza",
+    "price" : 100
+},
+{
+    "_id": {
+        "$oid": "60f95325b977890ae4086a9b"
+    },
+    "name" : "product 3",
+    "image" : "pizza.png",
+    "description" : "delicious pizza",
+    "price" : 100
+},
+{
+    "_id": {
+        "$oid": "60f95325b977890ae4086a0b"
+    },
+    "name" : "product 4",
+    "image" : "pizza.png",
+    "description" : "delicious pizza",
+    "price" : 100
+},
+{
+    "_id": {
+        "$oid": "60f95325b977890ae4086a2b"
+    },
+    "name" : "product 5",
+    "image" : "pizza.png",
+    "description" : "delicious pizza",
+    "price" : 100
+}
+]
