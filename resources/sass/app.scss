@@ -1,0 +1,25 @@
+@import './_variables';
+
+body {
+    color: $dark;
+}
+.navbar-brand{
+    padding: 0 !important;
+}
+nav li{
+    margin-left: 7px;
+    &:hover {
+        color: $primary-hover;
+    }
+
+}
+nav li:last-child {
+    &:hover {
+        background: $primary-hover;
+    }
+    background: $primary;
+    border-radius: 15px;
+    padding: 2px;
+    width: 55px;
+    text-align: center;
+}

@@ -1,0 +1,25 @@
+body {
+  color: #383736;
+}
+
+.navbar-brand {
+  padding: 0 !important;
+}
+
+nav .nav-link {
+  margin-left: 7px;
+}
+nav .nav-link:hover {
+  color: #FB8E76;
+}
+
+nav li:last-child {
+  background: #F95C3A;
+  border-radius: 15px;
+  padding: 2px;
+  width: 55px;
+  text-align: center;
+}
+nav li:last-child:hover {
+  background: #FB8E76;
+}
