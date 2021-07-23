@@ -614,8 +614,8 @@ nav li:last-child {
             letter-spacing:1px;
           }
           span.sb-value{
-            font-size:1.1em;
-            width:120px;
+            font-size: 24px;
+            width: 170px;
           }
           &.tax{
             .tax-edit{
@@ -962,3 +962,31 @@ nav li:last-child {
       width: 100%;
     }
   }
+
+
+  //order page 
+
+  .text-charcoal{
+    color: $dark;
+    font-weight: bold;
+  }
+  .text-pebble{
+    color: #6f6d6d;
+  }
+  .btn-primary:hover {
+    color: #fff;
+    background-color: $primary-hover;
+    border-color: $primary-hover;
+}
+.btn-primary {
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+.btn-primary:focus {
+  color: #fff;
+  background-color: $primary-hover;
+  border-color: $primary-hover;
+}
+
+

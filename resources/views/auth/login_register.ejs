@@ -3,29 +3,35 @@
       <div class="user signinBx">
         <div class="imgBx"><img src="img/login.png" alt="" /></div>
         <div class="formBx">
-          <form action="" onsubmit="return false;">
+          <form action="/login" method="POST">
             <h2>Sign In</h2>
-            <input type="text" name="" placeholder="Email" id="lemail"/>
-            <input type="password" name="" placeholder="Password" id="lpassword"/>
+            <% if(messages.lerror) { %>
+              <span class="msg-error text-danger" ><%= messages.lerror %></span>
+              <% } %>
+            <input type="email" name="email" placeholder="Email" id="lemail" required/>
+            <input type="password" name="password" placeholder="Password" id="lpassword" required/>
             <input type="submit" name="" value="Login" />
             <p class="signup">
               Don't have an account ?
-              <a href="#" onclick="toggleForm();">Sign Up.</a>
+              <a onclick="toggleForm();" style="cursor:pointer">Sign Up.</a>
             </p>
           </form>
         </div>
       </div>
       <div class="user signupBx">
         <div class="formBx">
-          <form action="" onsubmit="return false;">
+          <form action="/register" method="POST">
             <h2>Create an account</h2>
-            <input type="text" name="" placeholder="Username" id="rusername"/>
-            <input type="email" name="" placeholder="Email Address" id="remail" />
-            <input type="password" name="" placeholder="Create Password" id="rpassword"/>
+            <% if(messages.rerror) { %>
+            <span class="msg-error text-danger" ><%= messages.rerror %></span>
+            <% } %>
+            <input type="text" name="username" placeholder="Username" id="rusername" required/>
+            <input type="email" name="email" placeholder="Email Address" id="remail" required/>
+            <input type="password" name="password" placeholder="Create Password" id="rpassword" required/>
             <input type="submit" name="" value="Sign Up" />
             <p class="signup">
               Already have an account ?
-              <a href="#" onclick="toggleForm();">Sign in.</a>
+              <a onclick="toggleForm();" style="cursor:pointer">Sign in.</a>
             </p>
           </form>
         </div>

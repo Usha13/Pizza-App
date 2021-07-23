@@ -1,0 +1,49 @@
+<section>
+    <div class="container">
+        <% if(messages.success) { %>
+            <div>
+                <p class="text-success"><%= messages.success %></p>
+            </div>
+        <% } %>
+    </div>
+
+      <div class="container mt-3 mt-md-5">
+        <h2 class="text-charcoal hidden-sm-down">Your Orders</h2>
+
+        <% for(order of orders) { %>
+        <div class="row">
+          <div class="col-12">
+            <div class="list-group mb-5">
+              <div class="list-group-item p-3 bg-snow" style="position: relative;">
+                <div class="row w-100 no-gutters">
+                  <div class="col-6 col-md-3">
+                    <h6 class="text-charcoal  w-100">Order Id</h6>
+                    <p class="text-pebble  w-100 mb-3 "><%= order._id %></p>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <h6 class="text-charcoal  w-100">Date</h6>
+                    <p class="text-pebble  w-100 mb-3 "><%= moment(order.createdAt).format('D/M/YY hh:mm A') %></p>  
+                  </div>
+                  <div class="col-6 col-md-3"> 
+                    <h6 class="text-charcoal  w-100">Total</h6>
+                    <p class="text-pebble  w-100 mb-3 ">RS <%= order.total + 20 %> /-</p> 
+                  </div>
+                  <div class="col-6 col-md-3"> 
+                    <h6 class="text-charcoal  w-100">Status</h6>
+                    <p class="text-pebble  w-100 mb-3 "><%= order.status %></p> 
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <a href="/order/<%= order._id %>" class="btn btn-primary w-100">View Order</a>
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <% } %>
+    </div>
+          
+</section>

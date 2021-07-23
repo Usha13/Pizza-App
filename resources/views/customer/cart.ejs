@@ -41,13 +41,13 @@
             
           </div>  
           <div style="text-align: right; width: 5%; cursor: pointer;">
-            <span class="tp-remove" data-product="<%= JSON.stringify(product) %>">X</span>
+            <span class="tp-remove text-danger" data-product="<%= JSON.stringify(product) %>">X</span>
           </div>
           
                 
         </div>
       </li>
-<!-- end simple product -->
+    <!-- end simple product -->
 
       <% } %>
       
@@ -56,25 +56,32 @@
         </div>
         <div class="sub-table cf">
           <div class="summary-block">
-            <div class="sb-promo">
-                <input type="text" placeholder="Enter Phone Number">
-              <textarea  placeholder="Enter Address" style="width: 100%;" rows="5"></textarea>
-              <!-- <a class="btn">Apply</a> -->
-            </div>        
             <ul>
-              <li class="subtotal"><span class="sb-label">Subtotal</span><span class="sb-value">Rs <%= session.cart.totalPrice %></span></li>
-              <li class="shipping"><span class="sb-label">Shipping</span><span class="sb-value">Rs 20.00</span></li>
+              <li class="subtotal"><span class="sb-label">Subtotal</span><span class="sb-value">Rs <%= session.cart.totalPrice %>/-</span></li>
+              <li class="shipping"><span class="sb-label">Shipping</span><span class="sb-value">Rs 20.00/-</span></li>
               <li class="tax-calculate"><input type="text" value="06484" class="tax" /><span class="btn">Calculate</span></li>
-              <li class="grand-total"><span class="sb-label">Total</span><span class="sb-value">Rs <%= session.cart.totalPrice + 20.00 %></span></li>
+              <li class="grand-total"><span class="sb-label">Total</span><span class="sb-value">Rs <%= session.cart.totalPrice + 20.00 %>/-</span></li>
             </ul>
+            <div class="sb-promo">
+              <% if(user) { %>
+              <form action="/order" method="POST">
+                <input type="text" placeholder="Enter Phone Number" name="phone" required>
+                <textarea  placeholder="Enter Address" name="address" style="width: 100%;" rows="5" required></textarea>
+                <div class="cart-footer cf">
+                  <button class="btn" type="submit">Checkout</button>
+                  <a class="cont-shopping"><i class="i-angle-left"></i>Continue Shopping</a>    
+                </div>
+              </form>
+              <% } else { %>
+                  <a class="btn" href="/login_register">Login to Continue</a>
+              <% } %>
+            </div>        
+            
           </div>
           
         </div>
         
-        <div class="cart-footer cf">
-            <a class="btn">Checkout</a>
-            <a class="cont-shopping"><i class="i-angle-left"></i>Continue Shopping</a>    
-        </div>
+        
     </div>
 
     <% } %>

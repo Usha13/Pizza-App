@@ -1,0 +1,75 @@
+<section>
+    <div class="wrap">
+        <% if(order) { %>
+
+            <header class="cart-header cf">
+                <strong>#<%= order._id %></strong>
+            </header>  
+
+            <div class="my-5">
+                <div class="row">
+                    <div class="col-6 text-charcoal mb-3">Date & Time</div>
+                    <div class="col-6 text-pebble mb-3"><%= moment(order.createdAt).format('D/M/YY hh:mm A') %></div>
+                </div>
+                <div class="row">
+                    <div class="col-6 text-charcoal mb-3">Phone Number</div>
+                    <div class="col-6 text-pebble mb-3"><%= order.phone %></div>
+                </div>
+                <div class="row">
+                    <div class="col-6 text-charcoal mb-3">Address</div>
+                    <div class="col-6 text-pebble mb-3"><%= order.address %></div>
+                </div>
+                <div class="row">
+                    <div class="col-6 text-charcoal mb-3">Status</div>
+                    <div class="col-6 text-pebble mb-3"><%= order.status %></div>
+                </div>
+            </div>
+
+              
+              <div class="cart-table">
+                <ul>
+            <% for(product of Object.values(order.products)) { %>
+                <li class="item">
+                <div class="item-main cf">
+                    <div class="item-block ib-info cf">
+                    <img class="product-img" src="../img/<%= product.item.image %>" />
+                    <div class="ib-info-meta">
+                        <span class="title"><%= product.item.name %></span>
+                        <!-- <span class="itemno"><%= product.item._id %></span> -->
+                    </div>
+                    </div>
+        
+                    <div class="item-block ib-qty">
+                    <span class="price"><span></span><%= product.qty %></span>
+                    </div>
+                    <div class="item-block ib-total-price">
+                    <span class="tp-price">Rs <%= product.item.price * product.qty  %></span>
+                    
+                    </div>  
+                   
+                    
+                        
+                </div>
+                </li>
+            <% } %>
+        
+        
+        </ul>
+          </div>
+          <div class="sub-table cf">
+            <div class="summary-block">
+              <ul>
+                <li class="subtotal"><span class="sb-label">Subtotal</span><span class="sb-value">Rs <%= order.total %>/-</span></li>
+                <li class="shipping"><span class="sb-label">Shipping</span><span class="sb-value">Rs 20.00/-</span></li>
+                <li class="tax-calculate"><input type="text" value="06484" class="tax" /><span class="btn">Calculate</span></li>
+                <li class="grand-total"><span class="sb-label">Total</span><span class="sb-value">Rs <%= order.total + 20.00 %>/-</span></li>
+              </ul>
+                       
+            </div>
+            
+          </div>
+          
+    </div>
+  
+      <% } %>
+  </section>

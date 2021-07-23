@@ -11,7 +11,7 @@ function cartController() {
                    items : {},
                    totalQty : 0,
                    totalPrice : 0
-                   }
+                }
             }
             const cart = req.session.cart
             if(!cart.items[req.body._id]){

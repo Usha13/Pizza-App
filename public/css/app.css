@@ -863,8 +863,8 @@ ul {
   letter-spacing: 1px;
 }
 .sub-table .summary-block ul li span.sb-value {
-  font-size: 1.1em;
-  width: 120px;
+  font-size: 24px;
+  width: 170px;
 }
 .sub-table .summary-block ul li.tax .tax-edit {
   color: #223840;
@@ -1206,4 +1206,30 @@ ul {
   .login .container .user .formBx {
     width: 100%;
   }
+}
+.text-charcoal {
+  color: #000;
+  font-weight: bold;
+}
+
+.text-pebble {
+  color: #6f6d6d;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #f56e50;
+  border-color: #f56e50;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #f84922;
+  border-color: #f84922;
+}
+
+.btn-primary:focus {
+  color: #fff;
+  background-color: #f56e50;
+  border-color: #f56e50;
 }
