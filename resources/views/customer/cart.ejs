@@ -1,5 +1,6 @@
 <section>
-    <!-- <div class="empty-cart">
+  <% if(!session.cart || session.cart.totalQty == 0) { %>
+    <div class="empty-cart">
         <div class="container mx-auto text-center">
             <h1>Your Cart is Empty</h1>
             <p class="text-secondary">You have not added any product in the cart</p>
@@ -9,8 +10,8 @@
             </div>
             
         </div>
-    </div>     -->
-
+    </div>    
+   <% } else { %>
 
     <div class="wrap">
 
@@ -20,32 +21,38 @@
         <div class="cart-table">
           <ul>
     
-
+      <% for(let product of Object.values(session.cart.items)) { %>
       <!-- begin simple product -->
       <li class="item">
         <div class="item-main cf">
           <div class="item-block ib-info cf">
-            <img class="product-img" src="http://fakeimg.pl/150/e5e5e5/adadad/?text=IMG" />
+            <img class="product-img" src="../img/<%= product.item.image %>" />
             <div class="ib-info-meta">
-              <span class="title">Product Name</span>
-              <span class="itemno">#3498765</span>
+              <span class="title"><%= product.item.name %></span>
+              <!-- <span class="itemno"><%= product.item._id %></span> -->
             </div>
           </div>
 
           <div class="item-block ib-qty">
-            <span class="price"><span></span>1</span>
+            <span class="price"><span></span><%= product.qty %></span>
           </div>
           <div class="item-block ib-total-price">
-            <span class="tp-price">Rs 75.00</span>
-            <span class="tp-remove"><i class="i-cancel-circle"></i></span>
+            <span class="tp-price">Rs <%= product.item.price * product.qty  %></span>
+            
           </div>  
+          <div style="text-align: right; width: 5%; cursor: pointer;">
+            <span class="tp-remove" data-product="<%= JSON.stringify(product) %>">X</span>
+          </div>
+          
                 
         </div>
       </li>
 <!-- end simple product -->
+
+      <% } %>
       
       
-          </ul>
+      </ul>
         </div>
         <div class="sub-table cf">
           <div class="summary-block">
@@ -55,11 +62,10 @@
               <!-- <a class="btn">Apply</a> -->
             </div>        
             <ul>
-              <li class="subtotal"><span class="sb-label">Subtotal</span><span class="sb-value">$25.99</span></li>
-              <li class="shipping"><span class="sb-label">Shipping</span><span class="sb-value">n/a</span></li>
-              <li class="tax"><span class="sb-label">Est. Tax </span><span class="sb-value">$5.00</span></li>
+              <li class="subtotal"><span class="sb-label">Subtotal</span><span class="sb-value">Rs <%= session.cart.totalPrice %></span></li>
+              <li class="shipping"><span class="sb-label">Shipping</span><span class="sb-value">Rs 20.00</span></li>
               <li class="tax-calculate"><input type="text" value="06484" class="tax" /><span class="btn">Calculate</span></li>
-              <li class="grand-total"><span class="sb-label">Total</span><span class="sb-value">$120.99</span></li>
+              <li class="grand-total"><span class="sb-label">Total</span><span class="sb-value">Rs <%= session.cart.totalPrice + 20.00 %></span></li>
             </ul>
           </div>
           
@@ -70,4 +76,6 @@
             <a class="cont-shopping"><i class="i-angle-left"></i>Continue Shopping</a>    
         </div>
     </div>
+
+    <% } %>
 </section>

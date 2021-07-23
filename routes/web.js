@@ -4,10 +4,12 @@ const cartController = require("../app/http/controllers/customers/cartController
 
 function initRoutes(app) {
     app.get('/', homeController().index)
-    
-    app.get('/cart', cartController().index)
-    
+      
     app.get('/login_register', authController().loginRegister)
+
+    app.get('/cart', cartController().index)
+    app.post('/update-cart', cartController().update)
+    app.post('/delete-cart', cartController().delete)
 }
 
 module.exports = initRoutes

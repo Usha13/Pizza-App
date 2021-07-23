@@ -1,4 +1,6 @@
 @import './_variables';
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
 
 body {
     color: $dark;
@@ -22,8 +24,8 @@ nav li:last-child {
     }
     background: $primary;
     border-radius: 15px;
-    padding: 2px;
-    width: 55px;
+    padding: 2px 8px;
+    width: 65px;
     text-align: center;
 }
 
@@ -416,7 +418,7 @@ nav li:last-child {
       float:left;
   
       &.ib-info{
-        width:100%;
+        width:50%;
         img.product-img{
           float:left;
           display:block;
@@ -478,8 +480,7 @@ nav li:last-child {
       }
       &.ib-total-price{
         width:20%;
-        text-align:right;
-        padding-top:6px;
+        text-align:center;
         position: relative;
         span{
           color:#555;
@@ -698,11 +699,18 @@ nav li:last-child {
   
   
   @media only screen and (max-width:860px){
+    .cart-table .item .item-block.ib-info {
+      width: 70%;
+  }
+    .cart-table .item .item-block.ib-qty {
+      width: 10%;
+      text-align: center;
+  }
     .item-main{
       position: relative;
     }
     .item .item-block.ib-info {
-      width: 70%;
+      width: 60%;
     }
     .item .item-block.ib-qty {
       text-align: right;
@@ -748,21 +756,28 @@ nav li:last-child {
   @media only screen and (max-width:630px){
     .item .item-block.ib-info {
       float:left;
-      width: 100%;
+      width: 70%;
     }
+    .cart-table .item .item-block.ib-qty {
+      width: 10%;
+    }
+    .cart-table .item .item-block.ib-total-price {
+      width: 25%;
+  }
     .item .item-block.ib-qty {
       float:left;
       margin-top:10px;
     }
     .item .item-block.ib-total-price {
       float:left;
-      width:auto;
+      width:25%;
       position: relative;
-      top:13px;
+      top:0px;
       right:0;
       border-left:1px solid #ccc;
-      padding-left:15px;
-      margin-left:15px;
+      padding-left: 5px;
+      margin-left: 5px;
+      font-size: 12px;
     }
     .item .bundle-block{
       display:none;
@@ -773,7 +788,13 @@ nav li:last-child {
   }
   
   @media only screen and (max-width:480px){
-  
+    .cart-table .item .item-block.ib-info {
+      width: 70%;
+  }
+    .cart-table .item .item-block.ib-qty {
+      width: 10%;
+      text-align: center;
+  }
   }
   
 

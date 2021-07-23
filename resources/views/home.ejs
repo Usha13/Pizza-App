@@ -27,7 +27,7 @@
             <h2 class="item"><%= product.name %></h2>
             <h3 class="price">Rs <%= product.price %>/-</h3>
             <p class="description"><%= product.description %></p>
-            <button type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
+            <button type="button" data-product="<%= JSON.stringify(product) %>" name="item-1-button" id="item-1-button" class="add-to-cart">Add to Cart</button>
           </div>
         </div>
       </div>
